@@ -1,0 +1,38 @@
+/* https://3dtransforms.desandro.com/card-flip 
+propriedades para fazer a ação do "flip" da carta na hora do clique
+MDN PESQUISAR - TRANSFORM3D CONCEITO
+
+*/ 
+
+/* no momento que o usuário clica, o flip da carta 
+irá acontecer de forma animada, como se fosse uma transição */
+
+.card-front-back {
+    --width: 130px;
+    --height: 160px;
+    width: var(--width);
+    height: var(--height);
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 600ms cubic-bezier(0.42, 0, 0.54, 1.68);
+}
+
+.card-front-back.-active {
+    transform: rotateY(180deg)
+}
+
+.card-front-back > .card {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+/* aqui são criados os elementos-filhos que vão responder
+em relação ao elemento-pai que está na div do index.js */
+.card-front-back > .card.-back {
+    transform: rotateY(180deg);
+}
+
+.card-front-back > .card.-back .card-game {
+    background-color: var(--color-fiery-rose);
+}
+/* .card-game será outro componente */
