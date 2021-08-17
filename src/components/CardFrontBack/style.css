@@ -15,6 +15,7 @@ irá acontecer de forma animada, como se fosse uma transição */
     position: relative;
     transform-style: preserve-3d;
     transition: 600ms cubic-bezier(0.42, 0, 0.54, 1.68);
+    cursor: pointer;
 }
 
 .card-front-back.-active {
